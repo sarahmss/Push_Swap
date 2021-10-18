@@ -6,7 +6,7 @@
 /*   By: smodesto <smodesto@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 09:58:24 by smodesto          #+#    #+#             */
-/*   Updated: 2021/10/17 12:52:31 by smodesto         ###   ########.fr       */
+/*   Updated: 2021/10/18 11:38:26 by smodesto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ t_node	*ft_get_new_node(int data)
 
 	new_node = (t_node *)malloc(sizeof(t_node));
 	if (!new_node)
-		ft_check_error(-2, "ERR_CREATE_NODE");
+		ft_check_error(-2, "ERR_CREATE_NODE", NULL);
 	new_node->data = data;
 	new_node->prev = NULL;
 	new_node->next = NULL;
@@ -74,7 +74,7 @@ void	ft_insert_at_foot(int data, t_node *head)
 /*
 Returns a pointer if the element is found in the list, otherwise returns null
 */
-t_node	*ft_search_elements( int data, t_node *head)
+t_node	*search_element(int data, t_node *head)
 {
 	t_node	*temp;
 

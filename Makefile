@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: smodesto <smodesto@student.42.fr>          +#+  +:+       +#+         #
+#    By: smodesto <smodesto@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/11 17:02:33 by smodesto          #+#    #+#              #
-#    Updated: 2021/10/17 12:08:46 by smodesto         ###   ########.fr        #
+#    Updated: 2021/10/18 10:33:09 by smodesto         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,8 +18,10 @@ SRC_PATH		= ./source/
 INCLUDES_PATH	= ./includes/
 OBJS_PATH		= ./objects/
 
-SRCS_FILES =	main.c	\
-				ft_lstdoubly.c
+SRCS_FILES =	main.c			\
+				ft_lstdoubly.c	\
+				init.c			\
+				stack_a.c
 
 SRCS = $(addprefix $(SRC_PATH), $(SRCS_FILES))
 
