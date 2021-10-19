@@ -6,7 +6,7 @@
 /*   By: smodesto <smodesto@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 09:10:58 by smodesto          #+#    #+#             */
-/*   Updated: 2021/09/10 19:40:29 by smodesto         ###   ########.fr       */
+/*   Updated: 2021/10/19 17:59:13 by smodesto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,15 @@ void	free_matrix(char **matrix)
 	int	i;
 
 	i = 0;
-	while (matrix[i])
+	if (matrix != NULL)
 	{
-		free(matrix[i]);
-		i++;
+		while (matrix[i])
+		{
+			free(matrix[i]);
+			i++;
+		}
+		free(matrix);
 	}
-	free(matrix);
 }
 
 static void	ft_strsep(char *dest, char *src, char c)

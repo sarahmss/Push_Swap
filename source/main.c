@@ -6,7 +6,7 @@
 /*   By: smodesto <smodesto@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/18 17:58:28 by smodesto          #+#    #+#             */
-/*   Updated: 2021/10/18 11:25:22 by smodesto         ###   ########.fr       */
+/*   Updated: 2021/10/19 19:35:03 by smodesto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,22 @@
 
 int	main(int argc, char **argv)
 {
-	t_stack_info	*info_s;
+	t_stack_info	*info;
 
-	if (argc <= 1)
+	if (argc < 2)
 	{
 		ft_printf("Insert a list to be sorted: ./push_swap <int list> \n");
 		exit (0);
 	}
-	info_s = init_stack_info(argc - 1);
-	info_s->head_a = ft_create_a_stack(argc, argv, info_s);
-	if (ft_check_sort(info_s->head_a))
-		ft_check_error(2, "sorted list \n", info_s);
+	info = init_stack_info();
+	info->args_list = args_list(info, argv, argc);
+	ft_create_a_stack(info);
+	if (ft_check_sort(info->head_a))
+		ft_check_error(2, "sorted list \n", info);
 	else
 	{
 		ft_printf("Not sorted list\n");
-		/*if (info_s->a_stack_len <= 5)
+		/*if (info->a_stack_len <= 5)
 			ft_sort_small_stack();
 		else
 			ft_sort_big_stack();*/
