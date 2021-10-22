@@ -6,7 +6,7 @@
 /*   By: smodesto <smodesto@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/18 17:58:28 by smodesto          #+#    #+#             */
-/*   Updated: 2021/10/21 19:29:16 by smodesto         ###   ########.fr       */
+/*   Updated: 2021/10/22 19:19:07 by smodesto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,9 @@
 int	main(int argc, char **argv)
 {
 	t_stack_info	*info;
+	t_node			*head_b;
 
+	head_b = NULL;
 	if (argc < 2)
 	{
 		ft_printf("Insert a list to be sorted: ./push_swap <int list> \n");
@@ -29,8 +31,10 @@ int	main(int argc, char **argv)
 	else
 	{
 		ft_print_list((t_nodel *)info->head_a);
-		info->tail_a = (t_node *)ft_lstlast((t_list *)info->head_a);
-		quickSort(info->head_a, info->tail_a);
+//		head_b = ft_insert_at_head(100000, head_b);
+//		push_a(&info->head_a, head_b);
+		reverse_rotate_a (&info->head_a);
+		ft_printf("--------rra---------\n");
 		ft_print_list((t_nodel *)info->head_a);
 		/*if (info->stack_len <= 5)
 			ft_sort_small_stack();

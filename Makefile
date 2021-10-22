@@ -6,7 +6,7 @@
 #    By: smodesto <smodesto@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/11 17:02:33 by smodesto          #+#    #+#              #
-#    Updated: 2021/10/19 20:51:20 by smodesto         ###   ########.fr        #
+#    Updated: 2021/10/22 19:19:30 by smodesto         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,11 @@ SRCS_FILES =	main.c			\
 				ft_lstdoubly.c	\
 				init.c			\
 				stack_a.c		\
-				sorting.c
+				sorting.c		\
+				swap.c			\
+				push.c			\
+				rotate.c		\
+				reverse_rotate.c\
 
 SRCS = $(addprefix $(SRC_PATH), $(SRCS_FILES))
 
@@ -49,7 +53,7 @@ $(OBJS_PATH)%.o : $(SRC_PATH)%.c $(HEADERS)
 $(LIBFT):
 			@echo making libft...
 			@echo --------------------------
-			@make -sC $(LIBFT_PATH)
+			@make bonus -sC $(LIBFT_PATH)
 			@echo done!
 			@echo --------------------------
 

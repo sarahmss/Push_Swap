@@ -6,7 +6,7 @@
 /*   By: smodesto <smodesto@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/18 17:58:28 by smodesto          #+#    #+#             */
-/*   Updated: 2021/10/21 21:15:49 by smodesto         ###   ########.fr       */
+/*   Updated: 2021/10/22 19:20:51 by smodesto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ t_node	*ft_partition(t_node *head, t_node *tail)
 	return (i);
 }
 
-void	quickSort(t_node *head, t_node *tail)
+void	quick_sort(t_node *head, t_node *tail)
 {
 	t_node	*partition;
 

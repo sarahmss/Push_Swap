@@ -6,7 +6,7 @@
 /*   By: smodesto <smodesto@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/16 19:06:18 by smodesto          #+#    #+#             */
-/*   Updated: 2021/10/17 12:47:08 by smodesto         ###   ########.fr       */
+/*   Updated: 2021/10/22 09:38:33 by smodesto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,9 @@ int	ft_strisalnum(char *str)
 	i = 0;
 	while (str[i])
 	{
-		if (!(48 <= str[i] && str[i] <= 57) || (i > 10)
+		if (str[i] == '-')
+			ft_strisalnum(&str[i + 1]);
+		else if (!(48 <= str[i] && str[i] <= 57) || (i > 10)
 			|| ft_atoi(str) > 2147483647 || ft_atoi(str) < -2147483648)
 			return (0);
 		i++;
