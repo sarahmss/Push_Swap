@@ -6,7 +6,7 @@
 #    By: smodesto <smodesto@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/11 17:02:33 by smodesto          #+#    #+#              #
-#    Updated: 2021/10/18 10:33:09 by smodesto         ###   ########.fr        #
+#    Updated: 2021/10/19 20:51:20 by smodesto         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,8 @@ OBJS_PATH		= ./objects/
 SRCS_FILES =	main.c			\
 				ft_lstdoubly.c	\
 				init.c			\
-				stack_a.c
+				stack_a.c		\
+				sorting.c
 
 SRCS = $(addprefix $(SRC_PATH), $(SRCS_FILES))
 

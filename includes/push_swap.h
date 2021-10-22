@@ -6,7 +6,7 @@
 /*   By: smodesto <smodesto@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/17 18:56:26 by smodesto          #+#    #+#             */
-/*   Updated: 2021/10/19 19:41:12 by smodesto         ###   ########.fr       */
+/*   Updated: 2021/10/21 21:16:44 by smodesto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,7 @@ char			**args_list(t_stack_info *info, char **argv, int argc);
 // init
 t_stack_info	*init_stack_info(void);
 
+// sorting
+void	ft_swap(t_node *A, t_node *B);
+void	quickSort(t_node *head, t_node *tail);
 #endif

@@ -1,5 +1,6 @@
 # define function to be compiled
 SRCS	=	ft_bzero.c		\
+		ft_lstprint.c		\
 		ft_free_array.c		\
 		ft_atoi.c			\
 		ft_isalnum.c		\

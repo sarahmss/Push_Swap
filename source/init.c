@@ -6,7 +6,7 @@
 /*   By: smodesto <smodesto@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 10:15:46 by smodesto          #+#    #+#             */
-/*   Updated: 2021/10/19 18:18:27 by smodesto         ###   ########.fr       */
+/*   Updated: 2021/10/21 18:58:45 by smodesto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ t_stack_info	*init_stack_info(void)
 	if (!info_s)
 		ft_check_error(-2, "Initing structure", NULL);
 	info_s->head_a = NULL;
+	info_s->tail_a = (t_node *)malloc(sizeof(t_node *));
+	info_s->tail_a = NULL;
 	info_s->args = 0;
 	info_s->stack_len = 0;
 	info_s->args_list = NULL;
@@ -32,6 +34,7 @@ void	ft_check_error(int err, char *msg, t_stack_info	*info_s)
 	{
 		ft_free_list(info_s->head_a);
 		free_matrix(info_s->args_list);
+		free(info_s->tail_a);
 		free (info_s);
 	}
 	if (err == -1)

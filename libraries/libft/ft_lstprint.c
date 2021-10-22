@@ -1,37 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   ft_lstprint.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smodesto <smodesto@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/28 08:41:22 by smodesto          #+#    #+#             */
-/*   Updated: 2021/10/21 19:22:50 by smodesto         ###   ########.fr       */
+/*   Created: 2021/10/19 19:59:53 by smodesto          #+#    #+#             */
+/*   Updated: 2021/10/19 20:10:01 by smodesto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+# include "libft.h"
 
-t_list	*ft_lstlast(t_list *lst)
+void	ft_print_list(t_nodel *head)
 {
-	t_list	*current;
+	t_nodel	*temp;
+	int		i;
 
-	current = lst;
-	if (current == NULL)
-		return (0);
-	while (current->next != NULL)
-		current = current->next;
-	return (current);
-}
-
-t_nodel	*ft_lstdlast(t_nodel *lst)
-{
-	t_nodel	*current;
-
-	current = lst;
-	if (current == NULL)
-		return (0);
-	while (current->next != NULL)
-		current = current->next;
-	return (current);
+	i = 0;
+	temp = head;
+	while (temp->next != NULL)
+	{
+		ft_printf("elem[%d]: %d \n", i, temp->data);
+		temp = temp->next;
+		i++;
+	}
+	ft_printf("elem[%d]: %d \n", i, temp->data);
 }

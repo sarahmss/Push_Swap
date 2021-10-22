@@ -6,7 +6,7 @@
 /*   By: smodesto <smodesto@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/18 17:58:28 by smodesto          #+#    #+#             */
-/*   Updated: 2021/10/19 19:35:03 by smodesto         ###   ########.fr       */
+/*   Updated: 2021/10/21 19:29:16 by smodesto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,11 @@ int	main(int argc, char **argv)
 		ft_check_error(2, "sorted list \n", info);
 	else
 	{
-		ft_printf("Not sorted list\n");
-		/*if (info->a_stack_len <= 5)
+		ft_print_list((t_nodel *)info->head_a);
+		info->tail_a = (t_node *)ft_lstlast((t_list *)info->head_a);
+		quickSort(info->head_a, info->tail_a);
+		ft_print_list((t_nodel *)info->head_a);
+		/*if (info->stack_len <= 5)
 			ft_sort_small_stack();
 		else
 			ft_sort_big_stack();*/

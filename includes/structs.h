@@ -6,7 +6,7 @@
 /*   By: smodesto <smodesto@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/18 08:51:24 by smodesto          #+#    #+#             */
-/*   Updated: 2021/10/19 19:42:01 by smodesto         ###   ########.fr       */
+/*   Updated: 2021/10/21 19:28:45 by smodesto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ typedef struct s_node
 typedef struct s_stack_info
 {
 	t_node	*head_a;
+	t_node	*tail_a;
 	int		stack_len;
 	int		args;
 	char	**args_list;
