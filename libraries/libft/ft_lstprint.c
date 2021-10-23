@@ -6,7 +6,7 @@
 /*   By: smodesto <smodesto@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 19:59:53 by smodesto          #+#    #+#             */
-/*   Updated: 2021/10/19 20:10:01 by smodesto         ###   ########.fr       */
+/*   Updated: 2021/10/23 13:03:14 by smodesto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,5 @@ void	ft_print_list(t_nodel *head)
 		i++;
 	}
 	ft_printf("elem[%d]: %d \n", i, temp->data);
+	ft_printf("-----a-----\n");
 }

@@ -6,7 +6,7 @@
 /*   By: smodesto <smodesto@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 17:39:22 by smodesto          #+#    #+#             */
-/*   Updated: 2021/10/22 19:23:55 by smodesto         ###   ########.fr       */
+/*   Updated: 2021/10/23 16:12:31 by smodesto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,28 +16,28 @@
 	take the first element at the top of b and put it at the top of a.
 	Do nothing if b is empty
 */
-char	*push_a(t_node **head_a, t_node *head_b)
+void	push_a(t_stack_info *info)
 {
-	if (head_b)
+	if (info->head_b)
 	{
-		*head_a = ft_insert_at_head(head_b->data, *head_a);
-		stack_del(&head_b, head_b);
+		info->head_a = ft_insert_at_head(info->head_b->data, info->head_a);
+		stack_del(&info->head_b, info->head_b);
 	}
-	return ("pb\n");
+	write(1, "pb\n", 3);
 }
 
 /*
-	take the first element at the top of b and put it at the top of a.
+	take the first element at the top of a and put it at the top of b.
 	Do nothing if b is empty
 */
-char	*push_b(t_node **head_b, t_node *head_a)
+void	push_b(t_stack_info *info)
 {
-	if (head_a)
+	if (info->head_a)
 	{
-		*head_b = ft_insert_at_head(head_a->data, *head_b);
-		stack_del(&head_a, head_a);
+		info->head_b = ft_insert_at_head(info->head_a->data, info->head_b);
+		stack_del(&info->head_a, info->head_a);
 	}
-	return ("pb\n");
+	write(1, "pb\n", 3);
 }
 
 /*

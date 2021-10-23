@@ -6,7 +6,7 @@
 #    By: smodesto <smodesto@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/11 17:02:33 by smodesto          #+#    #+#              #
-#    Updated: 2021/10/22 19:19:30 by smodesto         ###   ########.fr        #
+#    Updated: 2021/10/23 12:52:21 by smodesto         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,11 +22,12 @@ SRCS_FILES =	main.c			\
 				ft_lstdoubly.c	\
 				init.c			\
 				stack_a.c		\
-				sorting.c		\
+				quick_sort.c	\
 				swap.c			\
 				push.c			\
 				rotate.c		\
 				reverse_rotate.c\
+				small_stack.c
 
 SRCS = $(addprefix $(SRC_PATH), $(SRCS_FILES))
 

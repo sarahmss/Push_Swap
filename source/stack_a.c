@@ -6,7 +6,7 @@
 /*   By: smodesto <smodesto@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 12:56:28 by smodesto          #+#    #+#             */
-/*   Updated: 2021/10/19 19:39:25 by smodesto         ###   ########.fr       */
+/*   Updated: 2021/10/23 15:42:11 by smodesto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,20 +41,6 @@ void	ft_create_a_stack(t_stack_info *info)
 	}
 }
 
-int	ft_check_sort(t_node *stack)
-{
-	if (stack != NULL)
-	{
-		while (stack->next != NULL)
-		{
-			if (stack->data > stack->next->data)
-				return (0);
-			stack = stack->next;
-		}
-	}
-	return (1);
-}
-
 char	**args_list(t_stack_info *info, char **argv, int argc)
 {
 	char	**args_list;
@@ -81,4 +67,21 @@ char	**args_list(t_stack_info *info, char **argv, int argc)
 		info->stack_len = argc - 1;
 	}
 	return (args_list);
+}
+
+/*
+	if stack is sorted returns 1, otherwise, returns 0
+*/
+int	ft_check_sort(t_node *stack)
+{
+	if (stack != NULL)
+	{
+		while (stack->next != NULL)
+		{
+			if (stack->data > stack->next->data)
+				return (0);
+			stack = stack->next;
+		}
+	}
+	return (1);
 }

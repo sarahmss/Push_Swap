@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sorting.c                                          :+:      :+:    :+:   */
+/*   quick_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smodesto <smodesto@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/18 17:58:28 by smodesto          #+#    #+#             */
-/*   Updated: 2021/10/22 19:20:51 by smodesto         ###   ########.fr       */
+/*   Updated: 2021/10/23 12:56:37 by smodesto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ void	quick_sort(t_node *head, t_node *tail)
 		&& (tail != head) && (tail != head->next))
 	{
 		partition = ft_partition(head, tail);
-		quickSort(head, partition->prev);
-		quickSort(partition->next, tail);
+		quick_sort(head, partition->prev);
+		quick_sort(partition->next, tail);
 	}
 }
