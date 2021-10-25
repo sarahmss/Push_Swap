@@ -6,7 +6,7 @@
 /*   By: smodesto <smodesto@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/18 08:51:24 by smodesto          #+#    #+#             */
-/*   Updated: 2021/10/23 15:32:38 by smodesto         ###   ########.fr       */
+/*   Updated: 2021/10/25 12:46:55 by smodesto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,20 +35,10 @@
 typedef struct s_node
 {
 	int				data;
+	int				index;
 	struct s_node	*next;
 	struct s_node	*prev;
 }	t_node;
-
-typedef struct s_stack_info
-{
-	t_node	*head_a;
-	t_node	*tail_a;
-	t_node	*head_b;
-	t_node	*tail_b;
-	int		stack_len;
-	int		args;
-	char	**args_list;
-}	t_stack_info;
 
 typedef struct s_worm
 {
@@ -56,5 +46,15 @@ typedef struct s_worm
 	int	body;
 	int	tail;
 }	t_worm;
+
+typedef struct s_stack_info
+{
+	t_node	*head_a;
+	t_node	*head_b;
+	int		stack_len;
+	int		args;
+	char	**args_list;
+	t_worm	*w;
+}	t_stack_info;
 
 #endif

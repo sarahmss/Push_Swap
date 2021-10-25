@@ -6,7 +6,7 @@
 /*   By: smodesto <smodesto@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/17 18:56:26 by smodesto          #+#    #+#             */
-/*   Updated: 2021/10/23 17:50:06 by smodesto         ###   ########.fr       */
+/*   Updated: 2021/10/25 19:41:11 by smodesto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,34 +34,38 @@ int				ft_check_sort(t_node *stack);
 // init
 t_stack_info	*init_stack_info(void);
 void			ft_check_error(int err, char *msg, t_stack_info	*info_s);
+void			before_living(t_stack_info *info_s);
+t_worm			*init_worm(t_stack_info *info, t_worm *w);
+
+// run
 void			run(t_stack_info *info, char *operation, int times);
-t_worm			*init_worm(int head, int body, int tail, t_worm *w);
 
 // sorting
-void		ft_swap(t_node *A, t_node *B);
-void		quick_sort(t_node *head, t_node *tail);
+void			ft_swap(t_node *A, t_node *B);
+void			quick_sort(t_node *head, t_node *tail);
+void			ft_put_index(t_stack_info *info);
 
 // swap
-void		swap_a(t_node *head_a);
-void		swap_b(t_node *head_b);
-void		swap_a_b(t_node *head_a, t_node *head_b);
+void			swap_a(t_node *head_a);
+void			swap_b(t_node *head_b);
+void			swap_a_b(t_node *head_a, t_node *head_b);
 
 // push
-void		stack_del(t_node **head, t_node *del);
-void		push_a(t_stack_info *info);
-void		push_b(t_stack_info *info);
+void			stack_del(t_node **head, t_node *del);
+void			push_a(t_stack_info *info);
+void			push_b(t_stack_info *info);
 
 // rotate
-void		rotate_a(t_node **head_a);
-void		rotate_b(t_node **head_b);
-void		rotate_a_b(t_node **head_b, t_node **head_a);
+void			rotate_a(t_node **head_a);
+void			rotate_b(t_node **head_b);
+void			rotate_a_b(t_node **head_b, t_node **head_a);
 
 // reverse rotate
-void		reverse_rotate_a(t_node **head_a);
-void		reverse_rotate_b(t_node **head_b);
-void		reverse_rotate_a_b(t_node **head_b, t_node **head_a);
+void			reverse_rotate_a(t_node **head_a);
+void			reverse_rotate_b(t_node **head_b);
+void			reverse_rotate_a_b(t_node **head_b, t_node **head_a);
 
 // sort_small_stack
-void		sort_small_stack(t_stack_info *info);
+void			sort_small_stack(t_stack_info *info);
 
 #endif

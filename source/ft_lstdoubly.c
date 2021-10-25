@@ -6,7 +6,7 @@
 /*   By: smodesto <smodesto@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 09:58:24 by smodesto          #+#    #+#             */
-/*   Updated: 2021/10/19 19:09:50 by smodesto         ###   ########.fr       */
+/*   Updated: 2021/10/25 19:10:17 by smodesto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ t_node	*search_element(int data, t_node *head)
 	t_node	*temp;
 
 	temp = head;
-	while (temp && (temp->next != NULL))
+	while (temp != NULL)
 	{
 		if (temp->data == data)
 			return (temp);

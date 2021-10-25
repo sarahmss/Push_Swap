@@ -6,7 +6,7 @@
 #    By: smodesto <smodesto@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/11 17:02:33 by smodesto          #+#    #+#              #
-#    Updated: 2021/10/23 12:52:21 by smodesto         ###   ########.fr        #
+#    Updated: 2021/10/25 11:56:20 by smodesto         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,6 +26,7 @@ SRCS_FILES =	main.c			\
 				swap.c			\
 				push.c			\
 				rotate.c		\
+				run.c			\
 				reverse_rotate.c\
 				small_stack.c
 

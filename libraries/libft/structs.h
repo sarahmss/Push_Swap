@@ -6,7 +6,7 @@
 /*   By: smodesto <smodesto@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 20:00:56 by smodesto          #+#    #+#             */
-/*   Updated: 2021/10/19 20:04:43 by smodesto         ###   ########.fr       */
+/*   Updated: 2021/10/25 13:49:41 by smodesto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ typedef struct s_list
 typedef struct s_nodel
 {
 	int				data;
+	int				index;
 	struct s_nodel	*next;
 	struct s_nodel	*prev;
 }	t_nodel;
