@@ -6,12 +6,12 @@
 /*   By: smodesto <smodesto@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 20:00:56 by smodesto          #+#    #+#             */
-/*   Updated: 2021/10/25 13:49:41 by smodesto         ###   ########.fr       */
+/*   Updated: 2021/10/26 10:01:42 by smodesto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef STRUCT_H
-# define STRUCT_H
+#ifndef STRUCTS_LFT_H
+# define STRUCTS_LFT_H
 # include "libft.h"
 //printf
 typedef struct s_format

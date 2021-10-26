@@ -6,7 +6,7 @@
 /*   By: smodesto <smodesto@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 10:07:57 by smodesto          #+#    #+#             */
-/*   Updated: 2021/10/21 19:21:51 by smodesto         ###   ########.fr       */
+/*   Updated: 2021/10/26 10:01:55 by smodesto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 # include <sys/types.h>
 # include <sys/stat.h>
 # include <sys/fcntl.h>
-# include "./structs.h"
+# include "./structs_lft.h"
 
 t_nodel	*ft_lstdlast(t_nodel *lst);
 

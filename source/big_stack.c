@@ -1,27 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstprint.c                                      :+:      :+:    :+:   */
+/*   big_stack.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smodesto <smodesto@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/19 19:59:53 by smodesto          #+#    #+#             */
-/*   Updated: 2021/10/26 10:02:24 by smodesto         ###   ########.fr       */
+/*   Created: 2021/10/26 09:40:38 by smodesto          #+#    #+#             */
+/*   Updated: 2021/10/26 09:59:03 by smodesto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/push_swap.h"
 
-void	ft_print_list(t_nodel *head)
+void	sort_big_stack(t_stack_info *info)
 {
-	t_nodel	*temp;
+	int	len;
 
-	temp = head;
-	while (temp->next != NULL)
-	{
-		ft_printf("elem[%d]: %d \n", temp->index, temp->data);
-		temp = temp->next;
-	}
-	ft_printf("elem[%d]: %d \n", temp->index, temp->data);
-	ft_printf("-----a-----\n");
+	len = ft_lstsize((t_list *) info->head_a);
+	if ((ft_check_sort(info->head_a)) && (info->stack_len == len))
+		return ;
 }

@@ -6,7 +6,7 @@
 /*   By: smodesto <smodesto@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/18 08:51:24 by smodesto          #+#    #+#             */
-/*   Updated: 2021/10/25 12:46:55 by smodesto         ###   ########.fr       */
+/*   Updated: 2021/10/26 09:45:56 by smodesto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ typedef struct s_stack_info
 	int		args;
 	char	**args_list;
 	t_worm	*w;
+	int		op;
 }	t_stack_info;
 
 #endif

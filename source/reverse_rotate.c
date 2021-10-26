@@ -6,7 +6,7 @@
 /*   By: smodesto <smodesto@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 17:39:22 by smodesto          #+#    #+#             */
-/*   Updated: 2021/10/23 12:58:00 by smodesto         ###   ########.fr       */
+/*   Updated: 2021/10/26 09:47:58 by smodesto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 	reverse rotate a - shift down all elements of stack_a by 1.
 	The last element becomes the first one
 */
-void	reverse_rotate_a(t_node **head_a)
+void	reverse_rotate_a(t_node **head_a, t_stack_info *info)
 {
 	t_node	*head;
 	t_node	*tail;
@@ -31,13 +31,14 @@ void	reverse_rotate_a(t_node **head_a)
 	tail->prev = NULL;
 	*head_a = tail;
 	write(1, "rra\n", 4);
+	info->op++;
 }
 /*
 	reverse rotate b - shift down all elements of stack_b by 1.
 	The last element becomes the first one
 */
 
-void	reverse_rotate_b(t_node **head_b)
+void	reverse_rotate_b(t_node **head_b, t_stack_info *info)
 {
 	t_node	*head;
 	t_node	*tail;
@@ -52,11 +53,12 @@ void	reverse_rotate_b(t_node **head_b)
 	tail->prev = NULL;
 	*head_b = tail;
 	write(1, "rrb\n", 4);
+	info->op++;
 }
 
-void	reverse_rotate_a_b(t_node **head_a, t_node **head_b)
+void	reverse_rotate_a_b(t_node **head_a, t_node **head_b, t_stack_info *inf)
 {
-	reverse_rotate_a(head_a);
-	reverse_rotate_b(head_b);
+	reverse_rotate_a(head_a, inf);
+	reverse_rotate_b(head_b, inf);
 	write(1, "rrr\n", 4);
 }

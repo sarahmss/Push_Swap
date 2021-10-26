@@ -6,7 +6,7 @@
 /*   By: smodesto <smodesto@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 10:15:46 by smodesto          #+#    #+#             */
-/*   Updated: 2021/10/25 19:41:54 by smodesto         ###   ########.fr       */
+/*   Updated: 2021/10/26 09:54:50 by smodesto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ t_stack_info	*init_stack_info(void)
 	info_s->stack_len = 0;
 	info_s->args_list = NULL;
 	info_s->w = NULL;
+	info_s->op = 0;
 	return (info_s);
 }
 

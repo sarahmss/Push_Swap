@@ -6,7 +6,7 @@
 /*   By: smodesto <smodesto@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/17 18:56:26 by smodesto          #+#    #+#             */
-/*   Updated: 2021/10/25 19:41:11 by smodesto         ###   ########.fr       */
+/*   Updated: 2021/10/26 10:00:22 by smodesto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,9 @@ void			quick_sort(t_node *head, t_node *tail);
 void			ft_put_index(t_stack_info *info);
 
 // swap
-void			swap_a(t_node *head_a);
-void			swap_b(t_node *head_b);
-void			swap_a_b(t_node *head_a, t_node *head_b);
+void			swap_a(t_node *head_a, t_stack_info *info);
+void			swap_b(t_node *head_b, t_stack_info *info);
+void			swap_a_b(t_node *head_a, t_node *head_b, t_stack_info *info);
 
 // push
 void			stack_del(t_node **head, t_node *del);
@@ -56,14 +56,15 @@ void			push_a(t_stack_info *info);
 void			push_b(t_stack_info *info);
 
 // rotate
-void			rotate_a(t_node **head_a);
-void			rotate_b(t_node **head_b);
-void			rotate_a_b(t_node **head_b, t_node **head_a);
+void			rotate_a(t_node **head_a, t_stack_info *info);
+void			rotate_b(t_node **head_b, t_stack_info *info);
+void			rotate_a_b(t_node **head_b, t_node **head_a, t_stack_info *inf);
 
 // reverse rotate
-void			reverse_rotate_a(t_node **head_a);
-void			reverse_rotate_b(t_node **head_b);
-void			reverse_rotate_a_b(t_node **head_b, t_node **head_a);
+void			reverse_rotate_a(t_node **head_a, t_stack_info *info);
+void			reverse_rotate_b(t_node **head_b, t_stack_info *info);
+void			reverse_rotate_a_b(t_node **head_b, t_node **head_a,
+					t_stack_info *inf);
 
 // sort_small_stack
 void			sort_small_stack(t_stack_info *info);

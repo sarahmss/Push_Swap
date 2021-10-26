@@ -6,7 +6,7 @@
 /*   By: smodesto <smodesto@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 17:39:22 by smodesto          #+#    #+#             */
-/*   Updated: 2021/10/23 12:57:32 by smodesto         ###   ########.fr       */
+/*   Updated: 2021/10/26 09:52:46 by smodesto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 	shift up all elements of stack_a by 1.
 	The first element becomes the last one
 */
-void	rotate_a(t_node **head_a)
+void	rotate_a(t_node **head_a, t_stack_info *info)
 {
 	t_node	*head;
 	t_node	*tail;
@@ -31,13 +31,14 @@ void	rotate_a(t_node **head_a)
 	head->prev = tail;
 	head->next = NULL;
 	write(1, "ra\n", 3);
+	info->op++;
 }
 
 /*
 	rotate b - shift up all elements of stack_b by 1.
 	The first element becomes the last one
 */
-void	rotate_b(t_node **head_b)
+void	rotate_b(t_node **head_b, t_stack_info *info)
 {
 	t_node	*head;
 	t_node	*tail;
@@ -52,14 +53,15 @@ void	rotate_b(t_node **head_b)
 	head->prev = tail;
 	head->next = NULL;
 	write(1, "rb\n", 3);
+	info->op++;
 }
 
 /*
 	ra and rb at the same time
 */
-void	rotate_a_b(t_node **head_b, t_node **head_a)
+void	rotate_a_b(t_node **head_b, t_node **head_a, t_stack_info *info)
 {
-	rotate_a(head_a);
-	rotate_b(head_b);
+	rotate_a(head_a, info);
+	rotate_b(head_b, info);
 	write(1, "rr\n", 3);
 }

@@ -6,7 +6,7 @@
 /*   By: smodesto <smodesto@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 17:39:22 by smodesto          #+#    #+#             */
-/*   Updated: 2021/10/23 16:12:31 by smodesto         ###   ########.fr       */
+/*   Updated: 2021/10/26 09:46:43 by smodesto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,11 @@ void	push_a(t_stack_info *info)
 	if (info->head_b)
 	{
 		info->head_a = ft_insert_at_head(info->head_b->data, info->head_a);
+		info->head_a->index = info->head_b->index;
 		stack_del(&info->head_b, info->head_b);
 	}
 	write(1, "pb\n", 3);
+	info->op++;
 }
 
 /*
@@ -35,9 +37,11 @@ void	push_b(t_stack_info *info)
 	if (info->head_a)
 	{
 		info->head_b = ft_insert_at_head(info->head_a->data, info->head_b);
+		info->head_b->index = info->head_a->index;
 		stack_del(&info->head_a, info->head_a);
 	}
 	write(1, "pb\n", 3);
+	info->op++;
 }
 
 /*

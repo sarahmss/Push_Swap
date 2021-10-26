@@ -6,7 +6,7 @@
 /*   By: smodesto <smodesto@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/18 17:58:28 by smodesto          #+#    #+#             */
-/*   Updated: 2021/10/25 19:41:44 by smodesto         ###   ########.fr       */
+/*   Updated: 2021/10/26 09:36:47 by smodesto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,16 @@
 void	ft_swap(t_node *A, t_node *B)
 {
 	int	temp;
+	int	temp_i;
 
 	if (A != B)
 	{
 		temp = A->data;
+		temp_i = A->index;
 		A->data = B->data;
+		A->index = B->index;
 		B->data = temp;
+		B->index = temp_i;
 	}
 }
 
