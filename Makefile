@@ -6,7 +6,7 @@
 #    By: smodesto <smodesto@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/11 17:02:33 by smodesto          #+#    #+#              #
-#    Updated: 2021/10/26 09:40:54 by smodesto         ###   ########.fr        #
+#    Updated: 2021/10/27 17:28:25 by smodesto         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,6 +29,7 @@ SRCS_FILES =	main.c			\
 				run.c			\
 				reverse_rotate.c\
 				big_stack.c		\
+				searching.c		\
 				small_stack.c
 
 SRCS = $(addprefix $(SRC_PATH), $(SRCS_FILES))

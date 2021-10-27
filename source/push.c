@@ -6,7 +6,7 @@
 /*   By: smodesto <smodesto@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 17:39:22 by smodesto          #+#    #+#             */
-/*   Updated: 2021/10/26 09:46:43 by smodesto         ###   ########.fr       */
+/*   Updated: 2021/10/27 17:36:37 by smodesto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	push_a(t_stack_info *info)
 		info->head_a->index = info->head_b->index;
 		stack_del(&info->head_b, info->head_b);
 	}
-	write(1, "pb\n", 3);
+	write(1, "pa\n", 3);
 	info->op++;
 }
 

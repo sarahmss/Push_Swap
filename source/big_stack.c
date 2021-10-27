@@ -6,70 +6,67 @@
 /*   By: smodesto <smodesto@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/26 09:40:38 by smodesto          #+#    #+#             */
-/*   Updated: 2021/10/26 23:38:18 by smodesto         ###   ########.fr       */
+/*   Updated: 2021/10/27 19:50:17 by smodesto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-static int	from_tail(t_node *tail, t_node *smallest)
+t_stack_aux *	set_aux(t_stack_info *info, int *left_bound, int *right_bound)
 {
-	t_node		*temp;
-	int			rra;
+	static int	cont;
+	t_stack_aux	*aux;
 
-	rra = 1;
-	temp = tail;
-	if (tail->index == smallest->index)
-		return (rra);
-	while (temp->index != smallest->index)
+	aux = (t_stack_aux *)malloc(sizeof(t_stack_aux));
+	if (!aux)
+		ft_check_error(-1, "init aux stack", info);
+	aux->head = info->head_a;
+	aux->tail = (t_node *)ft_lstlast((t_list *)info->head_a);
+	aux->hold_1 = search_in_range(*left_bound, *right_bound, aux->head, 1);
+	aux->hold_2 = search_in_range(*left_bound, *right_bound, aux->tail, 2);
+	aux->t1 = from_head(aux->head, aux->hold_1);
+	aux->t2 = from_tail(aux->tail, aux->hold_2);
+	cont++;
+	if (cont == 20)
 	{
-		temp = temp->prev;
-		rra++;
+		*left_bound += 20;
+		*right_bound += 20;
+		cont = 0;
 	}
-	return (rra);
+	return (aux);
 }
 
-static int from_head(t_node *head, t_node *smallest)
+static int	ra_or_rra(t_stack_info *info)
 {
-	t_node		*temp;
-	int			ra;
+	static int	left_bound;
+	static int	right_bound;
+	t_stack_aux	*aux;
+	int			times;
 
-	ra = 0;
-	temp = head;
-	if (head->index == smallest->index)
-		return (0);
-	while (temp->index != smallest->index)
+	if (left_bound == 0)
+		right_bound = 19;
+	aux = set_aux(info, &left_bound, &right_bound);
+	if (aux->t1 == aux->t2)
 	{
-		temp = temp->next;
-		ra++;
+		if (aux->hold_1->index < aux->hold_2->index)
+			info->args = 1;
+		else
+			info->args = 2;
+		times = aux->t1;
 	}
-	return (ra);
-}
-
-static int	tail_or_head(t_stack_info *info)
-{
-	static int	smallest;
-	t_node		*node;
-	int			ra;
-	int			rra;
-
-	node = search_element(smallest, info->head_a, 1);
-	info->temp = (t_node *)ft_lstlast((t_list *)info->head_a);
-	ra = from_head(info->head_a, node);
-	rra = from_tail(info->temp, node);
-	smallest++;
-	if (ra < rra)
+	else if (aux->t1 < aux->t2)
 	{
 		info->args = 1;
-		return (ra);
+		times = aux->t1;
 	}
 	else
 	{
 		info->args = 2;
-		return (rra);
+		times = aux->t2;
 	}
+	free(aux);
+	return (times);
 }
-
 
 static void	big_recursive_stack(t_stack_info *info)
 {
@@ -80,7 +77,7 @@ static void	big_recursive_stack(t_stack_info *info)
 	if (info->stack_len == len)
 		return ;
 	if (info->head_a->next)
-		times = tail_or_head(info);
+		times = ra_or_rra(info);
 	if (info->args == 1 && info->head_a->next)
 		run(info, "ra", times);
 	if (info->args == 2 && info->head_a->next)
@@ -92,5 +89,5 @@ static void	big_recursive_stack(t_stack_info *info)
 void	sort_big_stack(t_stack_info *info)
 {
 	big_recursive_stack(info);
-	run(info, "pa", info->stack_len);
+//	run(info, "pa", info->stack_len);
 }

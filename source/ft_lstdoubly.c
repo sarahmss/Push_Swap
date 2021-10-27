@@ -6,7 +6,7 @@
 /*   By: smodesto <smodesto@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 09:58:24 by smodesto          #+#    #+#             */
-/*   Updated: 2021/10/26 15:17:31 by smodesto         ###   ########.fr       */
+/*   Updated: 2021/10/27 17:21:37 by smodesto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,36 +69,6 @@ void	ft_insert_at_foot(int data, t_node *head)
 		temp->next = new_node;
 		new_node->prev = temp;
 	}
-}
-
-/*
-	Returns a pointer if the element is found in the list, otherwise returns null
-	mod: 1 for search index
-*/
-t_node	*search_element(int data, t_node *head, int mod)
-{
-	t_node	*temp;
-
-	temp = head;
-	if (mod == 1)
-	{
-		while (temp != NULL)
-		{
-			if (temp->index == data)
-				return (temp);
-			temp = temp->next;
-		}
-	}
-	else
-	{
-		while (temp != NULL)
-		{
-			if (temp->data == data)
-				return (temp);
-			temp = temp->next;
-		}
-	}
-	return (NULL);
 }
 
 void	ft_free_list(t_node *head)

@@ -6,7 +6,7 @@
 /*   By: smodesto <smodesto@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/17 18:56:26 by smodesto          #+#    #+#             */
-/*   Updated: 2021/10/26 15:15:02 by smodesto         ###   ########.fr       */
+/*   Updated: 2021/10/27 17:52:24 by smodesto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,14 @@
 t_node			*ft_get_new_node(int data);
 t_node			*ft_insert_at_head(int data, t_node *head);
 void			ft_insert_at_foot(int data, t_node *head);
-t_node			*search_element(int data, t_node *head, int mod);
 void			ft_free_list(t_node *head);
+
+// searching
+int				tail_or_head(t_stack_info *info);
+t_node			*search_element(int data, t_node *head, int mod);
+t_node			*search_in_range(int left, int right, t_node *node, int mod);
+int				from_head(t_node *head, t_node *smallest);
+int				from_tail(t_node *tail, t_node *smallest);
 
 // stacks
 void			ft_create_a_stack(t_stack_info *info_s);
