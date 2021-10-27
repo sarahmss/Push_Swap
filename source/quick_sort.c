@@ -6,7 +6,7 @@
 /*   By: smodesto <smodesto@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/18 17:58:28 by smodesto          #+#    #+#             */
-/*   Updated: 2021/10/26 09:36:47 by smodesto         ###   ########.fr       */
+/*   Updated: 2021/10/26 15:15:58 by smodesto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,7 +106,7 @@ void	ft_put_index(t_stack_info *info)
 	temp_sort = sorted;
 	while (i < info->stack_len)
 	{
-		temp_ind = search_element(temp_sort->data, info->head_a);
+		temp_ind = search_element(temp_sort->data, info->head_a, 0);
 		temp_ind->index = i;
 		temp_sort = temp_sort->next;
 		i++;

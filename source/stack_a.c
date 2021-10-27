@@ -6,7 +6,7 @@
 /*   By: smodesto <smodesto@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 12:56:28 by smodesto          #+#    #+#             */
-/*   Updated: 2021/10/23 15:42:11 by smodesto         ###   ########.fr       */
+/*   Updated: 2021/10/26 15:16:37 by smodesto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static void	ft_create_a_sup(int i, t_stack_info *info)
 	num = ft_atoi(info->args_list[i]);
 	if (i == 0)
 		info->head_a = ft_insert_at_head(num, info->head_a);
-	else if (search_element(num, info->head_a))
+	else if (search_element(num, info->head_a, 0))
 		ft_check_error(1, "repeated numbers", info);
 	if (i != 0)
 		ft_insert_at_foot(num, info->head_a);

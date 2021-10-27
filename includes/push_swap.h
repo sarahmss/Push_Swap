@@ -6,7 +6,7 @@
 /*   By: smodesto <smodesto@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/17 18:56:26 by smodesto          #+#    #+#             */
-/*   Updated: 2021/10/26 10:00:22 by smodesto         ###   ########.fr       */
+/*   Updated: 2021/10/26 15:15:02 by smodesto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 t_node			*ft_get_new_node(int data);
 t_node			*ft_insert_at_head(int data, t_node *head);
 void			ft_insert_at_foot(int data, t_node *head);
-t_node			*search_element(int data, t_node *head);
+t_node			*search_element(int data, t_node *head, int mod);
 void			ft_free_list(t_node *head);
 
 // stacks
@@ -44,6 +44,8 @@ void			run(t_stack_info *info, char *operation, int times);
 void			ft_swap(t_node *A, t_node *B);
 void			quick_sort(t_node *head, t_node *tail);
 void			ft_put_index(t_stack_info *info);
+void			sort_small_stack(t_stack_info *info);
+void			sort_big_stack(t_stack_info *info);
 
 // swap
 void			swap_a(t_node *head_a, t_stack_info *info);
@@ -65,8 +67,4 @@ void			reverse_rotate_a(t_node **head_a, t_stack_info *info);
 void			reverse_rotate_b(t_node **head_b, t_stack_info *info);
 void			reverse_rotate_a_b(t_node **head_b, t_node **head_a,
 					t_stack_info *inf);
-
-// sort_small_stack
-void			sort_small_stack(t_stack_info *info);
-
 #endif

@@ -6,7 +6,7 @@
 /*   By: smodesto <smodesto@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 11:38:59 by smodesto          #+#    #+#             */
-/*   Updated: 2021/10/26 09:55:59 by smodesto         ###   ########.fr       */
+/*   Updated: 2021/10/26 23:00:23 by smodesto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,28 @@
 
 static void	run_sup(t_stack_info *info, char *operation)
 {
-	if (ft_strncmp(operation, "pa", 2) == 0)
+	if (ft_strcmp(operation, "pa"))
 		push_a(info);
-	else if (ft_strncmp(operation, "pb", 2) == 0)
+	else if (ft_strcmp(operation, "pb"))
 		push_b(info);
-	else if (ft_strncmp(operation, "sa", 2) == 0)
+	else if (ft_strcmp(operation, "sa"))
 		swap_a(info->head_a, info);
-	else if (ft_strncmp(operation, "sb", 2) == 0)
+	else if (ft_strcmp(operation, "sb"))
 		swap_b(info->head_b, info);
-	else if (ft_strncmp(operation, "ss", 2) == 0)
+	else if (ft_strcmp(operation, "ss"))
 		swap_a_b(info->head_a, info->head_b, info);
-	else if (ft_strncmp(operation, "ra", 2) == 0)
-		rotate_a(&info->head_a, info);
-	else if (ft_strncmp(operation, "rb", 2) == 0)
-		rotate_b(&info->head_b, info);
-	else if (ft_strncmp(operation, "rr", 2) == 0)
-		rotate_a_b(&info->head_a, &info->head_b, info);
-	else if (ft_strncmp(operation, "rra", 3) == 0)
+	else if (ft_strcmp(operation, "rra"))
 		reverse_rotate_a(&info->head_a, info);
-	else if (ft_strncmp(operation, "rrb", 3) == 0)
+	else if (ft_strcmp(operation, "rrb"))
 		reverse_rotate_b(&info->head_b, info);
-	else if (ft_strncmp(operation, "rrr", 3) == 0)
+	else if (ft_strcmp(operation, "rrr"))
 		reverse_rotate_a_b(&info->head_a, &info->head_b, info);
+	else if (ft_strcmp(operation, "ra"))
+		rotate_a(&info->head_a, info);
+	else if (ft_strcmp(operation, "rb"))
+		rotate_b(&info->head_b, info);
+	else if (ft_strcmp(operation, "rr"))
+		rotate_a_b(&info->head_a, &info->head_b, info);
 }
 
 /*

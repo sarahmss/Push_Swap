@@ -6,7 +6,7 @@
 /*   By: smodesto <smodesto@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/18 17:58:28 by smodesto          #+#    #+#             */
-/*   Updated: 2021/10/26 09:54:29 by smodesto         ###   ########.fr       */
+/*   Updated: 2021/10/26 23:32:08 by smodesto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,14 @@ int	main(int argc, char **argv)
 		ft_check_error(2, "sorted list \n", info);
 	else
 	{
-		ft_print_list((t_nodel *)info->head_a);
 		ft_put_index(info);
+		ft_print_list((t_nodel *)info->head_a);
 		if (info->stack_len <= 5)
 			sort_small_stack(info);
-		/*else
-			sort_big_stack();*/
+		else
+			sort_big_stack(info);
 		ft_print_list((t_nodel *)info->head_a);
-		ft_printf("%d", info->op);
+		ft_printf("Total operations: %d\n", info->op);
 	}
 	before_living(info);
 	return (0);

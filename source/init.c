@@ -6,7 +6,7 @@
 /*   By: smodesto <smodesto@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 10:15:46 by smodesto          #+#    #+#             */
-/*   Updated: 2021/10/26 09:54:50 by smodesto         ###   ########.fr       */
+/*   Updated: 2021/10/26 23:09:35 by smodesto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ t_stack_info	*init_stack_info(void)
 		ft_check_error(-2, "Initing structure", NULL);
 	info_s->head_a = NULL;
 	info_s->head_b = NULL;
+	info_s->temp = NULL;
 	info_s->args = 0;
 	info_s->stack_len = 0;
 	info_s->args_list = NULL;
