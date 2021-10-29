@@ -6,7 +6,7 @@
 /*   By: smodesto <smodesto@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/26 09:40:38 by smodesto          #+#    #+#             */
-/*   Updated: 2021/10/27 19:50:17 by smodesto         ###   ########.fr       */
+/*   Updated: 2021/10/29 19:49:32 by smodesto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ t_stack_aux *	set_aux(t_stack_info *info, int *left_bound, int *right_bound)
 {
 	static int	cont;
 	t_stack_aux	*aux;
+	static int	op;
 
 	aux = (t_stack_aux *)malloc(sizeof(t_stack_aux));
 	if (!aux)
@@ -29,9 +30,22 @@ t_stack_aux *	set_aux(t_stack_info *info, int *left_bound, int *right_bound)
 	cont++;
 	if (cont == 20)
 	{
-		*left_bound += 20;
-		*right_bound += 20;
+		if (aux->t1 < aux->t2)
+			run(info, "ra", aux->t1);
+		else
+			run(info, "rra", aux->t2);
+		push_b(info);
+		sort_b(info, *left_bound ,*right_bound, op);
+		ft_print_list((t_nodel *)info->head_a, 'a');
+		ft_printf("Total operations: %d\n", info->op);
+		*left_bound -= 20;
+		*right_bound -= 20;
 		cont = 0;
+		op++;
+		free(aux);
+		if (op == 5)
+			info->sair = 1;
+		return (NULL);
 	}
 	return (aux);
 }
@@ -43,9 +57,14 @@ static int	ra_or_rra(t_stack_info *info)
 	t_stack_aux	*aux;
 	int			times;
 
-	if (left_bound == 0)
-		right_bound = 19;
+	if (left_bound == 0 && right_bound != 19)
+	{
+		left_bound = 80;
+		right_bound = 99;
+	}
 	aux = set_aux(info, &left_bound, &right_bound);
+	if (aux == NULL)
+		return (-1);
 	if (aux->t1 == aux->t2)
 	{
 		if (aux->hold_1->index < aux->hold_2->index)
@@ -70,11 +89,9 @@ static int	ra_or_rra(t_stack_info *info)
 
 static void	big_recursive_stack(t_stack_info *info)
 {
-	int			len;
 	int			times;
 
-	len = ft_lstsize((t_list *) info->head_b);
-	if (info->stack_len == len)
+	if (ft_check_sort(info->head_a) || info->sair)
 		return ;
 	if (info->head_a->next)
 		times = ra_or_rra(info);
@@ -82,12 +99,12 @@ static void	big_recursive_stack(t_stack_info *info)
 		run(info, "ra", times);
 	if (info->args == 2 && info->head_a->next)
 		run(info, "rra", times);
-	push_b(info);
+	if (times != -1)
+		push_b(info);
 	big_recursive_stack(info);
 }
 
 void	sort_big_stack(t_stack_info *info)
 {
 	big_recursive_stack(info);
-//	run(info, "pa", info->stack_len);
 }

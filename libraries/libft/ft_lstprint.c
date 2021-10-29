@@ -6,13 +6,13 @@
 /*   By: smodesto <smodesto@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 19:59:53 by smodesto          #+#    #+#             */
-/*   Updated: 2021/10/26 10:02:24 by smodesto         ###   ########.fr       */
+/*   Updated: 2021/10/27 22:06:59 by smodesto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_print_list(t_nodel *head)
+void	ft_print_list(t_nodel *head, char c)
 {
 	t_nodel	*temp;
 
@@ -23,5 +23,5 @@ void	ft_print_list(t_nodel *head)
 		temp = temp->next;
 	}
 	ft_printf("elem[%d]: %d \n", temp->index, temp->data);
-	ft_printf("-----a-----\n");
+	ft_printf("-----%c-----\n", c);
 }

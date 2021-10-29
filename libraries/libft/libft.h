@@ -6,7 +6,7 @@
 /*   By: smodesto <smodesto@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 10:07:57 by smodesto          #+#    #+#             */
-/*   Updated: 2021/10/26 22:59:09 by smodesto         ###   ########.fr       */
+/*   Updated: 2021/10/27 22:13:20 by smodesto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	ft_strcmp(const char *s1, const char *s2);
 
 t_nodel	*ft_lstdlast(t_nodel *lst);
 
-void	ft_print_list(t_nodel *head);
+void	ft_print_list(t_nodel *head, char c);
 
 int		ft_arraylen(void **array);
 
