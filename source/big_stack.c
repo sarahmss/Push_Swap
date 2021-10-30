@@ -6,7 +6,7 @@
 /*   By: smodesto <smodesto@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/26 09:40:38 by smodesto          #+#    #+#             */
-/*   Updated: 2021/10/29 20:58:48 by smodesto         ###   ########.fr       */
+/*   Updated: 2021/10/29 21:16:05 by smodesto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,6 @@ t_stack_aux *	set_aux(t_stack_info *info, int *left_bound, int *right_bound)
 		cont = 0;
 		op++;
 		free(aux);
-		if (op == 5)
-			info->sair = 1;
 		return (NULL);
 	}
 	return (aux);
@@ -57,8 +55,8 @@ static int	ra_or_rra(t_stack_info *info)
 
 	if (left_bound == 0 && right_bound != 19)
 	{
-		right_bound = 99;
-		left_bound = 80;
+		right_bound = info->stack_len - 1;
+		left_bound = info->stack_len - 20;
 	}
 	aux = set_aux(info, &left_bound, &right_bound);
 	if (aux == NULL)
@@ -89,7 +87,7 @@ static void	big_recursive_stack(t_stack_info *info)
 {
 	int			times;
 
-	if (ft_check_sort(info->head_a) || info->sair)
+	if (ft_check_sort(info->head_a))
 		return ;
 	if (info->head_a->next)
 		times = ra_or_rra(info);
