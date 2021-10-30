@@ -6,11 +6,54 @@
 /*   By: smodesto <smodesto@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/29 20:05:25 by smodesto          #+#    #+#             */
-/*   Updated: 2021/10/29 22:54:54 by smodesto         ###   ########.fr       */
+/*   Updated: 2021/10/30 14:02:56 by smodesto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+
+t_stack_aux	*change_chuncks(t_stack_info *info, int *l, int *r, int *div)
+{
+	if (info->cont == *div)
+	{
+		sort_b (info, *l, *r);
+		*l -= *div;
+		*r -= *div;
+		info->cont = 0;
+		if (*l < 0)
+		{
+			*l = 0;
+			*div = *r + 1;
+		}
+	}
+	return (NULL);
+}
+
+void set_chuncks(t_stack_info *info, int *l, int *r, int *div)
+{
+	if (*l == 0 && *r != 19 && *r != 9)
+	{
+		*div = 20;
+		*r = info->stack_len - 1;
+		*l = info->stack_len - *div;
+	}
+}
+
+t_stack_aux	*set_aux(t_stack_info *info, int *l_bound, int *r_bound)
+{
+	t_stack_aux	*aux;
+
+	aux = (t_stack_aux *)malloc(sizeof(t_stack_aux));
+	if (!aux)
+		ft_check_error(-1, "init aux stack", info);
+	aux->head = info->head_a;
+	aux->tail = (t_node *)ft_lstlast((t_list *)info->head_a);
+	aux->hold_1 = search_in_range(*l_bound, *r_bound, aux->head, 1);
+	aux->hold_2 = search_in_range(*l_bound, *r_bound, aux->tail, 2);
+	aux->t1 = from_head(aux->head, aux->hold_1);
+	aux->t2 = from_tail(aux->tail, aux->hold_2);
+	return (aux);
+}
 
 static void	check_before_push(t_stack_info *info, t_node *node)
 {
@@ -40,7 +83,9 @@ void	sort_b(t_stack_info *info, int min, int max)
 	if ((bigger == 0 && info->head_b->next) || bigger == min - 21)
 		bigger = max;
 	node = search_element(bigger, info->head_b, 1);
-	if (info->head_b->next == node)
+	if (info->head_b == node)
+		times = 0;
+	else if (info->head_b->next == node)
 		swap_b(info->head_b, info);
 	else
 	{

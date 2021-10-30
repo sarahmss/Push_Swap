@@ -6,7 +6,7 @@
 /*   By: smodesto <smodesto@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/17 18:56:26 by smodesto          #+#    #+#             */
-/*   Updated: 2021/10/29 23:03:34 by smodesto         ###   ########.fr       */
+/*   Updated: 2021/10/30 13:33:21 by smodesto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,4 +74,8 @@ void			reverse_rotate_a(t_node **head_a, t_stack_info *info);
 void			reverse_rotate_b(t_node **head_b, t_stack_info *info);
 void			reverse_rotate_a_b(t_node **head_b, t_node **head_a,
 					t_stack_info *inf);
+
+t_stack_aux		*change_chuncks(t_stack_info *info, int *l, int *r, int *div);
+t_stack_aux		*set_aux(t_stack_info *info, int *l_bound, int *r_bound);
+void			set_chuncks(t_stack_info *info, int *l, int *r, int *div);
 #endif
