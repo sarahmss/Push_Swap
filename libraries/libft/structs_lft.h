@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   structs.h                                          :+:      :+:    :+:   */
+/*   structs_lft.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smodesto <smodesto@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 20:00:56 by smodesto          #+#    #+#             */
-/*   Updated: 2021/10/26 10:01:42 by smodesto         ###   ########.fr       */
+/*   Updated: 2021/10/29 23:08:45 by smodesto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STRUCTS_LFT_H
 # define STRUCTS_LFT_H
 # include "libft.h"
+
 //printf
 typedef struct s_format
 {

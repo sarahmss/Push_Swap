@@ -6,7 +6,7 @@
 /*   By: smodesto <smodesto@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 10:07:57 by smodesto          #+#    #+#             */
-/*   Updated: 2021/10/27 22:13:20 by smodesto         ###   ########.fr       */
+/*   Updated: 2021/10/29 23:08:52 by smodesto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 # include <sys/fcntl.h>
 # include "./structs_lft.h"
 
-int	ft_strcmp(const char *s1, const char *s2);
+int		ft_strcmp(const char *s1, const char *s2);
 
 t_nodel	*ft_lstdlast(t_nodel *lst);
 
