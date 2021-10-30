@@ -6,7 +6,7 @@
 /*   By: smodesto <smodesto@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/26 09:40:38 by smodesto          #+#    #+#             */
-/*   Updated: 2021/10/29 19:49:32 by smodesto         ###   ########.fr       */
+/*   Updated: 2021/10/29 20:58:48 by smodesto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,6 @@ t_stack_aux *	set_aux(t_stack_info *info, int *left_bound, int *right_bound)
 			run(info, "rra", aux->t2);
 		push_b(info);
 		sort_b(info, *left_bound ,*right_bound, op);
-		ft_print_list((t_nodel *)info->head_a, 'a');
-		ft_printf("Total operations: %d\n", info->op);
 		*left_bound -= 20;
 		*right_bound -= 20;
 		cont = 0;
@@ -59,8 +57,8 @@ static int	ra_or_rra(t_stack_info *info)
 
 	if (left_bound == 0 && right_bound != 19)
 	{
-		left_bound = 80;
 		right_bound = 99;
+		left_bound = 80;
 	}
 	aux = set_aux(info, &left_bound, &right_bound);
 	if (aux == NULL)

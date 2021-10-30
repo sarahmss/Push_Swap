@@ -6,7 +6,7 @@
 /*   By: smodesto <smodesto@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/27 17:21:11 by smodesto          #+#    #+#             */
-/*   Updated: 2021/10/29 19:41:08 by smodesto         ###   ########.fr       */
+/*   Updated: 2021/10/29 20:32:41 by smodesto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,34 +107,27 @@ int from_head(t_node *head, t_node *smallest)
 	}
 	return (ra);
 }
-
-void	sort_b(t_stack_info *info, int min, int max, int op)
+/*
+	given a node returns the least amount of operations to place it on top
+*/
+int	tail_or_head(t_stack_info *info, t_node *top, t_node *head)
 {
-	static int	bigger;
 	t_node		*node;
-	int			rb;
-	int			rrb;
+	int			ra;
+	int			rra;
 
-	if (!info->head_b)
-		return ;
-	if ((bigger == 0 && info->head_b->next) || bigger == min - 21)
-		bigger = max;
-	node = search_element(bigger, info->head_b, 1);
-	if (info->head_b->next == node)
-		swap_b(info->head_b, info);
+	node = top;
+	info->temp = (t_node *)ft_lstlast((t_list *)head);
+	ra = from_head(head, node);
+	rra = from_tail(info->temp, node);
+	if (ra < rra)
+	{
+		info->args = 1;
+		return (ra);
+	}
 	else
 	{
-		info->temp = (t_node *)ft_lstlast((t_list *)info->head_b);
-		rb = from_head(info->head_b, node);
-		rrb = from_tail(info->temp, node);
-		if (rb < rrb && info->head_b->next)
-			run(info, "rb", rb);
-		else if(info->head_b->next)
-			run(info, "rrb", rrb);
+		info->args = 2;
+		return (rra);
 	}
-	push_a(info);
-//	if (op > 0)
-//		rotate_a(&info->head_a, info);
-	bigger--;
-	sort_b(info, min, max, op);
 }
