@@ -6,7 +6,7 @@
 /*   By: smodesto <smodesto@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/29 20:05:25 by smodesto          #+#    #+#             */
-/*   Updated: 2021/11/01 11:48:16 by smodesto         ###   ########.fr       */
+/*   Updated: 2021/11/01 12:26:50 by smodesto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,12 @@ void	set_chuncks(t_stack_info *info, int *l, int *r, int *div)
 {
 	if (*l == 0 && *div == 0 && *r == 0)
 	{
-		*div = 20;
+		if (info->stack_len <= 100)
+			*div = 25;
+		else if (info->stack_len <= 500)
+			*div = 35;
+		else
+			*div = 46;
 		*r = info->stack_len - 1;
 		*l = info->stack_len - *div;
 	}
