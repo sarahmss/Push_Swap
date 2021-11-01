@@ -6,7 +6,7 @@
 /*   By: smodesto <smodesto@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 09:58:24 by smodesto          #+#    #+#             */
-/*   Updated: 2021/10/27 17:21:37 by smodesto         ###   ########.fr       */
+/*   Updated: 2021/11/01 13:18:47 by smodesto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ t_node	*ft_get_new_node(int data)
 
 	new_node = (t_node *)malloc(sizeof(t_node));
 	if (!new_node)
-		ft_check_error(-2, "ERR_CREATE_NODE", NULL);
+		ft_check_error(-1, "ERR_CREATE_NODE", NULL);
 	new_node->data = data;
 	new_node->prev = NULL;
 	new_node->next = NULL;

@@ -6,7 +6,7 @@
 /*   By: smodesto <smodesto@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 10:15:46 by smodesto          #+#    #+#             */
-/*   Updated: 2021/10/30 14:02:47 by smodesto         ###   ########.fr       */
+/*   Updated: 2021/11/01 13:50:20 by smodesto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ t_stack_info	*init_stack_info(void)
 
 	info_s = (t_stack_info *)malloc(sizeof(t_stack_info));
 	if (!info_s)
-		ft_check_error(-2, "Initing structure", NULL);
+		ft_check_error(-1, "Initing structure", NULL);
 	info_s->head_a = NULL;
 	info_s->head_b = NULL;
 	info_s->temp = NULL;
@@ -36,7 +36,7 @@ t_worm	*init_worm(t_stack_info *info, t_worm *w)
 	if (w == NULL)
 		w = (t_worm *)malloc(sizeof(t_worm));
 	if (!w)
-		ft_check_error(1, "init worm", info);
+		ft_check_error(-1, "init worm", info);
 	w->head = info->head_a->data;
 	w->body = info->head_a->next->data;
 	w->tail = info->head_a->next->next->data;
@@ -66,14 +66,14 @@ void	ft_check_error(int err, char *msg, t_stack_info	*info_s)
 	before_living(info_s);
 	if (err == -1)
 	{
-		write(2, "Error\n", 7);
-		exit (1);
+		write(2, "Error\n", 6);
+		exit (0);
 	}
 	if (err == 0)
-		exit (1);
+		exit (0);
 	else
 	{
 		ft_printf("-ERRO: %s", msg);
-		exit (1);
+		exit (0);
 	}
 }

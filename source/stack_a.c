@@ -6,7 +6,7 @@
 /*   By: smodesto <smodesto@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 12:56:28 by smodesto          #+#    #+#             */
-/*   Updated: 2021/10/29 22:56:49 by smodesto         ###   ########.fr       */
+/*   Updated: 2021/11/01 12:48:11 by smodesto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static void	ft_create_a_sup(int i, t_stack_info *info)
 	if (i == 0)
 		info->head_a = ft_insert_at_head(num, info->head_a);
 	else if (search_element(num, info->head_a, 0))
-		ft_check_error(1, "repeated numbers", info);
+		ft_check_error(-1, "repeated numbers", info);
 	if (i != 0)
 		ft_insert_at_foot(num, info->head_a);
 }
@@ -36,7 +36,7 @@ void	ft_create_a_stack(t_stack_info *info)
 		if (ft_strisalnum(info->args_list[i]))
 			ft_create_a_sup(i, info);
 		else
-			ft_check_error(1, "not only int", info);
+			ft_check_error(-1, "not only int", info);
 		i++;
 	}
 }
