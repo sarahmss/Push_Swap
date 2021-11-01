@@ -6,7 +6,7 @@
 /*   By: smodesto <smodesto@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/27 17:21:11 by smodesto          #+#    #+#             */
-/*   Updated: 2021/10/29 23:04:24 by smodesto         ###   ########.fr       */
+/*   Updated: 2021/11/01 11:42:22 by smodesto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,11 +118,6 @@ int	tail_or_head(t_stack_info *info, t_node *top, t_node *head)
 	int			rra;
 
 	node = top;
-	if (head->next == node)
-	{
-		info->args = 3;
-		return (1);
-	}
 	info->temp = (t_node *)ft_lstlast((t_list *)head);
 	ra = from_head(head, node);
 	rra = from_tail(info->temp, node);

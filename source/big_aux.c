@@ -6,7 +6,7 @@
 /*   By: smodesto <smodesto@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/29 20:05:25 by smodesto          #+#    #+#             */
-/*   Updated: 2021/10/30 14:02:56 by smodesto         ###   ########.fr       */
+/*   Updated: 2021/11/01 11:48:16 by smodesto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@ t_stack_aux	*change_chuncks(t_stack_info *info, int *l, int *r, int *div)
 {
 	if (info->cont == *div)
 	{
-		sort_b (info, *l, *r);
+		sort_b (info, *l, *r, *div);
 		*l -= *div;
 		*r -= *div;
 		info->cont = 0;
-		if (*l < 0)
+		if (*l < 0 && *r > *l)
 		{
 			*l = 0;
 			*div = *r + 1;
@@ -29,9 +29,9 @@ t_stack_aux	*change_chuncks(t_stack_info *info, int *l, int *r, int *div)
 	return (NULL);
 }
 
-void set_chuncks(t_stack_info *info, int *l, int *r, int *div)
+void	set_chuncks(t_stack_info *info, int *l, int *r, int *div)
 {
-	if (*l == 0 && *r != 19 && *r != 9)
+	if (*l == 0 && *div == 0 && *r == 0)
 	{
 		*div = 20;
 		*r = info->stack_len - 1;
@@ -72,7 +72,7 @@ static void	check_before_push(t_stack_info *info, t_node *node)
 	}
 }
 
-void	sort_b(t_stack_info *info, int min, int max)
+void	sort_b(t_stack_info *info, int min, int max, int div)
 {
 	static int	bigger;
 	t_node		*node;
@@ -80,7 +80,7 @@ void	sort_b(t_stack_info *info, int min, int max)
 
 	if (!info->head_b)
 		return ;
-	if ((bigger == 0 && info->head_b->next) || bigger == min - 21)
+	if (bigger == 0 && info->head_b->next)
 		bigger = max;
 	node = search_element(bigger, info->head_b, 1);
 	if (info->head_b == node)
@@ -98,5 +98,5 @@ void	sort_b(t_stack_info *info, int min, int max)
 	check_before_push(info, info->head_b);
 	push_a(info);
 	bigger--;
-	sort_b(info, min, max);
+	sort_b(info, min, max, div);
 }

@@ -6,7 +6,7 @@
 /*   By: smodesto <smodesto@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/26 09:40:38 by smodesto          #+#    #+#             */
-/*   Updated: 2021/10/30 14:03:05 by smodesto         ###   ########.fr       */
+/*   Updated: 2021/11/01 11:48:02 by smodesto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 static void	ra_or_rra(t_stack_info *info, int *l_bound, int *r_bound, int *div)
 {
 	t_stack_aux	*aux;
-
 
 	aux = set_aux(info, l_bound, r_bound);
 	if (((aux->t1 == aux->t2) && (aux->hold_2->index > aux->hold_1->index))
@@ -51,16 +50,16 @@ static void	sa_or_pa(t_stack_info *info, int *l_bound, int *r_bound, int *div)
 
 void	sort_big_stack(t_stack_info *info)
 {
-	static int	left_bound;
-	static int	right_bound;
+	static int	left_boundarie;
+	static int	right_boundarie;
 	static int	div;
 	int			len;
 
 	len = ft_lstsize((t_list *) info->head_a);
 	if (ft_check_sort(info->head_a) && len == info->stack_len)
 		return ;
-	set_chuncks(info, &left_bound, &right_bound, &div);
-	sa_or_pa(info, &left_bound, &right_bound, &div);
- 	ra_or_rra(info, &left_bound, &right_bound, &div);
+	set_chuncks(info, &left_boundarie, &right_boundarie, &div);
+	sa_or_pa(info, &left_boundarie, &right_boundarie, &div);
+	ra_or_rra(info, &left_boundarie, &right_boundarie, &div);
 	sort_big_stack(info);
 }
