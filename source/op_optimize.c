@@ -6,7 +6,7 @@
 /*   By: smodesto <smodesto@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 19:00:05 by smodesto          #+#    #+#             */
-/*   Updated: 2021/11/01 21:25:38 by smodesto         ###   ########.fr       */
+/*   Updated: 2021/11/01 22:03:58 by smodesto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,23 +62,23 @@ void	create_operations(t_stack_info *info, char *operation)
 
 static void	substitute(t_operations *temp, t_operations *head)
 {
+	char	*op;
+
+	op = NULL;
 	if ((ft_strcmp(temp->op, "sa") && ft_strcmp(temp->next->op, "sb"))
 		|| (ft_strcmp(temp->op, "sb") && ft_strcmp(temp->next->op, "sa")))
-	{
-		temp->op = "ss";
-		stack_del((t_node **)&head, (t_node *)temp->next);
-	}
+		op = ft_strdup("ss");
 	if ((ft_strcmp(temp->op, "ra") && ft_strcmp(temp->next->op, "rb"))
 		|| (ft_strcmp(temp->op, "rb") && ft_strcmp(temp->next->op, "ra")))
-	{
-		temp->op = "rr";
-		stack_del((t_node **)&head, (t_node *)temp->next);
-	}
+		op = ft_strdup("rr");
 	if ((ft_strcmp(temp->op, "rra") && ft_strcmp(temp->next->op, "rrb"))
 		|| (ft_strcmp(temp->op, "rrb") && ft_strcmp(temp->next->op, "rra")))
+		op = ft_strdup("rrr");
+	if (op != NULL)
 	{
-		temp->op = "rrr";
+		temp->op = op;
 		stack_del((t_node **)&head, (t_node *)temp->next);
+		free(op);
 	}
 }
 
