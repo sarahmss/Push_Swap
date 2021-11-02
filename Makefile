@@ -6,7 +6,7 @@
 #    By: smodesto <smodesto@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/11 17:02:33 by smodesto          #+#    #+#              #
-#    Updated: 2021/10/29 20:36:37 by smodesto         ###   ########.fr        #
+#    Updated: 2021/11/01 20:01:21 by smodesto         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,20 +18,21 @@ SRC_PATH		= ./source/
 INCLUDES_PATH	= ./includes/
 OBJS_PATH		= ./objects/
 
-SRCS_FILES =	main.c			\
-				ft_lstdoubly.c	\
-				init.c			\
-				stack_a.c		\
-				quick_sort.c	\
-				swap.c			\
-				push.c			\
-				rotate.c		\
-				run.c			\
-				reverse_rotate.c\
-				big_stack.c		\
-				searching.c		\
-				big_aux.c		\
-				small_stack.c
+SRCS_FILES =	main.c				\
+				ut_create_stack.c	\
+				ut_lstdoubly.c		\
+				ut_init.c			\
+				ut_searching.c		\
+				op_swap.c			\
+				op_push.c			\
+				op_rotate.c			\
+				op_run.c			\
+				op_reverse_rotate.c	\
+				st_big_stack.c		\
+				st_quick_sort.c		\
+				st_big_aux.c		\
+				st_small_stack.c	\
+				op_optimize.c
 
 SRCS = $(addprefix $(SRC_PATH), $(SRCS_FILES))
 

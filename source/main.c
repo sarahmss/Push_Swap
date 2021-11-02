@@ -6,7 +6,7 @@
 /*   By: smodesto <smodesto@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/18 17:58:28 by smodesto          #+#    #+#             */
-/*   Updated: 2021/11/01 13:55:14 by smodesto         ###   ########.fr       */
+/*   Updated: 2021/11/01 21:23:37 by smodesto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ int	main(int argc, char **argv)
 			sort_small_stack(info);
 		else
 			sort_big_stack(info);
+		optimize_operations(info->inst);
+		ft_print_op(info->inst);
 	}
 	before_living(info);
 	return (0);

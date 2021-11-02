@@ -6,12 +6,19 @@
 /*   By: smodesto <smodesto@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/18 08:51:24 by smodesto          #+#    #+#             */
-/*   Updated: 2021/10/30 14:02:50 by smodesto         ###   ########.fr       */
+/*   Updated: 2021/11/01 21:07:50 by smodesto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STRUCTS_H
 # define STRUCTS_H
+
+typedef struct s_operations
+{
+	char				*op;
+	struct s_operations	*next;
+	struct s_operations	*prev;
+}	t_operations;
 
 typedef struct s_node
 {
@@ -40,14 +47,15 @@ typedef struct s_stack_aux
 
 typedef struct s_stack_info
 {
-	t_node		*head_a;
-	t_node		*head_b;
-	t_node		*temp;
-	int			stack_len;
-	int			args;
-	char		**args_list;
-	t_worm		*w;
-	int			op;
-	int			cont;
+	t_node			*head_a;
+	t_node			*head_b;
+	t_node			*temp;
+	t_worm			*w;
+	t_operations	*inst;
+	int				stack_len;
+	int				args;
+	char			**args_list;
+	int				op;
+	int				cont;
 }	t_stack_info;
 #endif

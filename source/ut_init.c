@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init.c                                             :+:      :+:    :+:   */
+/*   ut_init.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smodesto <smodesto@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 10:15:46 by smodesto          #+#    #+#             */
-/*   Updated: 2021/11/01 13:50:20 by smodesto         ###   ########.fr       */
+/*   Updated: 2021/11/01 21:06:59 by smodesto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ t_stack_info	*init_stack_info(void)
 	info_s->stack_len = 0;
 	info_s->args_list = NULL;
 	info_s->w = NULL;
+	info_s->inst = NULL;
 	info_s->op = 0;
 	info_s->cont = 0;
 	return (info_s);
@@ -48,19 +49,23 @@ void	before_living(t_stack_info *info_s)
 	if (info_s != NULL)
 	{
 		free_matrix(info_s->args_list);
-		ft_free_list(info_s->head_a);
-		ft_free_list(info_s->head_b);
+		if (info_s->head_a)
+			ft_free_list(info_s->head_a);
+		if (info_s->head_b)
+			ft_free_list(info_s->head_b);
+		if (info_s->inst)
+			ft_free_list((t_node *)info_s->inst);
 		if (info_s->w)
 			free(info_s->w);
 		free (info_s);
 	}
 }
+
 /*
 	-1: ERROR\n
 	0: exit
 	else:-ERRO msg
 */
-
 void	ft_check_error(int err, char *msg, t_stack_info	*info_s)
 {
 	before_living(info_s);

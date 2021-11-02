@@ -6,7 +6,7 @@
 /*   By: smodesto <smodesto@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/27 17:21:11 by smodesto          #+#    #+#             */
-/*   Updated: 2021/11/01 11:42:22 by smodesto         ###   ########.fr       */
+/*   Updated: 2021/11/01 14:29:46 by smodesto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,16 +74,16 @@ t_node	*search_in_range(int left, int right, t_node *node, int mod)
 	return (NULL);
 }
 
-int	from_tail(t_node *tail, t_node *smallest)
+int	from_tail(t_node *tail, t_node *node)
 {
 	t_node		*temp;
 	int			rra;
 
 	rra = 1;
 	temp = tail;
-	if (tail->index == smallest->index)
+	if (tail->index == node->index)
 		return (rra);
-	while (temp->index != smallest->index)
+	while (temp->index != node->index)
 	{
 		temp = temp->prev;
 		rra++;
@@ -91,26 +91,26 @@ int	from_tail(t_node *tail, t_node *smallest)
 	return (rra);
 }
 
-int	from_head(t_node *head, t_node *smallest)
+int	from_head(t_node *head, t_node *node)
 {
 	t_node		*temp;
 	int			ra;
 
 	ra = 0;
 	temp = head;
-	if (head->index == smallest->index)
+	if (head->index == node->index)
 		return (0);
-	while (temp->index != smallest->index)
+	while (temp->index != node->index)
 	{
 		temp = temp->next;
 		ra++;
 	}
 	return (ra);
 }
+
 /*
 	given a node returns the least amount of operations to place it on top
 */
-
 int	tail_or_head(t_stack_info *info, t_node *top, t_node *head)
 {
 	t_node		*node;

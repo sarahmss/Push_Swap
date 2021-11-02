@@ -1,16 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   run.c                                              :+:      :+:    :+:   */
+/*   op_run.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smodesto <smodesto@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 11:38:59 by smodesto          #+#    #+#             */
-/*   Updated: 2021/10/27 21:42:06 by smodesto         ###   ########.fr       */
+/*   Updated: 2021/11/01 20:58:18 by smodesto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+
+void	ft_print_op(t_operations *operations)
+{
+	t_operations	*temp;
+
+	temp = operations;
+	while (temp->next != NULL)
+	{
+		ft_printf("%s\n", temp->op);
+		temp = temp->next;
+	}
+	ft_printf("%s\n", temp->op);
+}
 
 static void	run_sup(t_stack_info *info, char *operation)
 {
