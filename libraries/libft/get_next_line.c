@@ -6,7 +6,7 @@
 /*   By: smodesto <smodesto@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/05 11:37:27 by smodesto          #+#    #+#             */
-/*   Updated: 2021/09/15 20:30:21 by smodesto         ###   ########.fr       */
+/*   Updated: 2021/11/02 12:40:49 by smodesto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_extra_strdup_g(const char *src, char c, int src_len)
 	char	*new_str;
 	int		i;
 
-	new_str = malloc((sizeof (char)) * src_len + 1 );
+	new_str = malloc((sizeof (char)) * src_len + 1);
 	if (new_str == NULL)
 		return (NULL);
 	i = 0;

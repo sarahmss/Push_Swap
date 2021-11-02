@@ -6,7 +6,7 @@
 /*   By: smodesto <smodesto@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 11:38:59 by smodesto          #+#    #+#             */
-/*   Updated: 2021/11/01 20:58:18 by smodesto         ###   ########.fr       */
+/*   Updated: 2021/11/02 12:45:22 by smodesto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,8 @@ static void	run_sup(t_stack_info *info, char *operation)
 		rotate_b(&info->head_b, info);
 	else if (ft_strcmp(operation, "rr"))
 		rotate_a_b(&info->head_a, &info->head_b, info);
+	else
+		ft_check_error(-1, "\0", info);
 }
 
 /*
